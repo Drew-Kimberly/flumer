@@ -16,7 +16,7 @@ describe('Test suite for logWithEvent', () => {
     message: '',
     context: [],
   };
-  const handler: LogChannelHandler = (msg, ...context) => ({
+  const handler: LogChannelHandler = () => ({
     ...loggable,
     message: 'hello world',
   });

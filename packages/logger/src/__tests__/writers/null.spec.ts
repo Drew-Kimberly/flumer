@@ -1,5 +1,5 @@
 import { nullWriter } from '../../writers';
-import { ILoggable, LogFormatter, LogSeverity } from '@flumer/core';
+import { ILoggable, LogSeverity } from '@flumer/core';
 import { asIsFormatter } from '../../formatters';
 
 describe('Test suite for nullWriter', () => {

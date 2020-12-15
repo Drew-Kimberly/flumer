@@ -12,8 +12,8 @@ import {
 import { createMockEventEmitter } from '../__mocks__/createMockEventEmitter';
 
 describe('Test suite for createLoggerFactory', () => {
-  const mockLogWriter: LogWriter = jest.fn(async (loggable, formatter) => {});
-  const mockLogFormatter: LogFormatter<void> = jest.fn(loggable => {});
+  const mockLogWriter: LogWriter = jest.fn(async () => {});
+  const mockLogFormatter: LogFormatter<void> = jest.fn(() => {});
 
   const createEventListener = (assertion): EventListener => (e, handler) =>
     assertion(e, handler);
@@ -32,7 +32,7 @@ describe('Test suite for createLoggerFactory', () => {
   test('createLoggerFactory registers a MESSAGE_LOGGED event listener', () => {
     const assertion: EventListener = (
       e: LogEvents,
-      handler: EventListenerHandler
+      _handler: EventListenerHandler
     ) => {
       expect(e).toEqual(LogEvents.MESSAGE_LOGGED);
     };
@@ -53,7 +53,7 @@ describe('Test suite for createLoggerFactory', () => {
       context: [],
     };
     const listener: EventListener = (
-      e: LogEvents,
+      _e: LogEvents,
       handler: EventListenerHandler
     ) => {
       handler(loggable);

@@ -13,7 +13,7 @@ describe('Test suite for createLogChannel', () => {
   test('createLogChannel creates a channel that can create debug loggables', () => {
     const channel = createLogChannel(channelName);
 
-    const expected: ILoggable<LogSeverity.DEBUG> = {
+    const expected: ILoggable = {
       severity: LogSeverity.DEBUG,
       channel: channelName,
       timestamp: NOW,
@@ -27,7 +27,7 @@ describe('Test suite for createLogChannel', () => {
   test('createLogChannel creates a channel that can create info loggables', () => {
     const channel = createLogChannel(channelName);
 
-    const expected: ILoggable<LogSeverity.INFO> = {
+    const expected: ILoggable = {
       severity: LogSeverity.INFO,
       channel: channelName,
       timestamp: NOW,
@@ -41,7 +41,7 @@ describe('Test suite for createLogChannel', () => {
   test('createLogChannel creates a channel that can create notice loggables', () => {
     const channel = createLogChannel(channelName);
 
-    const expected: ILoggable<LogSeverity.NOTICE> = {
+    const expected: ILoggable = {
       severity: LogSeverity.NOTICE,
       channel: channelName,
       timestamp: NOW,
@@ -55,7 +55,7 @@ describe('Test suite for createLogChannel', () => {
   test('createLogChannel creates a channel that can create warning loggables', () => {
     const channel = createLogChannel(channelName);
 
-    const expected: ILoggable<LogSeverity.WARNING> = {
+    const expected: ILoggable = {
       severity: LogSeverity.WARNING,
       channel: channelName,
       timestamp: NOW,
@@ -69,7 +69,7 @@ describe('Test suite for createLogChannel', () => {
   test('createLogChannel creates a channel that can create error loggables', () => {
     const channel = createLogChannel(channelName);
 
-    const expected: ILoggable<LogSeverity.ERROR> = {
+    const expected: ILoggable = {
       severity: LogSeverity.ERROR,
       channel: channelName,
       timestamp: NOW,
@@ -83,7 +83,7 @@ describe('Test suite for createLogChannel', () => {
   test('createLogChannel creates a channel that can create critical loggables', () => {
     const channel = createLogChannel(channelName);
 
-    const expected: ILoggable<LogSeverity.CRITICAL> = {
+    const expected: ILoggable = {
       severity: LogSeverity.CRITICAL,
       channel: channelName,
       timestamp: NOW,

@@ -13,7 +13,7 @@ import { consoleWriter } from './writers';
 
 export const createLoggerFactory = (
   logWriter: LogWriter = consoleWriter,
-  logFormatter: LogFormatter<any> = standardFormatter,
+  logFormatter: LogFormatter<unknown> = standardFormatter,
   eventEmitter: IEmitter = new EventEmitter()
 ): ILoggerFactory => {
   const curriedLogWriter = (loggable: ILoggable) =>
