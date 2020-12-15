@@ -44,7 +44,6 @@
     "gts": "^2.0.2",
     "jest": "^26.0.1",
     "lerna": "^3.22.0",
-    "lerna-semantic-release": "git+https://github.com/ZachCase/lerna-semantic-release",
     "semantic-release": "^15.14.0",
     "ts-jest": "^26.0.0",
     "typescript": "^3.8.3"

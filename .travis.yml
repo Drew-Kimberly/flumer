@@ -27,14 +27,14 @@ jobs:
     - script: npm run test:coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
       name: "Unit Test"
 
-    - stage: release
-      if: (branch = master) AND (type = push)
-      before_script:
-        - npm run compile
-        - npx lerna-semantic-release pre
-      script: 'true'
-      after_success: npx lerna-semantic-release post
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script: npx lerna-semantic-release perform
+    # - stage: release
+    #   if: (branch = master) AND (type = push)
+    #   before_script:
+    #     - npm run compile
+    #     - npx lerna-semantic-release pre
+    #   script: 'true'
+    #   after_success: npx lerna-semantic-release post
+    #   deploy:
+    #     provider: script
+    #     skip_cleanup: true
+    #     script: npx lerna-semantic-release perform
