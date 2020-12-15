@@ -4,7 +4,7 @@ import { createLoggable } from '../createLoggable';
 describe('Test suite for createLoggable', () => {
   const channelName: LogChannelName = 'foo';
   const message = 'hello world';
-  const severity: LogSeverity = LogSeverity.ERROR;
+  const severity = LogSeverity.ERROR;
   const context = [{ foo: 1 }];
   const dateNowFn = Date.now;
   const NOW = 1577883600000;

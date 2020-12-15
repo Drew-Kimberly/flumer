@@ -22,7 +22,7 @@ export interface ILoggable<S extends LogSeverity = LogSeverity> {
   channel: LogChannelName;
   timestamp: number;
   message: string;
-  context: any[];
+  context: unknown[];
 }
 
 export interface ILogChannel {
@@ -47,7 +47,7 @@ export type EventListener = (
 
 export type LogChannelHandler<S extends LogSeverity = LogSeverity> = (
   message: string,
-  ...context: any[]
+  ...context: unknown[]
 ) => ILoggable<S>;
 
 export type LogChannelName = string;
@@ -60,5 +60,5 @@ export type LogFormatter<T = string> = (loggable: ILoggable) => T;
 
 export type LogWriter = (
   loggable: ILoggable,
-  formatter: LogFormatter<any>
+  formatter: LogFormatter<unknown>
 ) => Promise<void>;

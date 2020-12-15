@@ -4,7 +4,7 @@ export const createLoggable = <S extends LogSeverity>(
   severity: S,
   channel: LogChannelName,
   message: string,
-  context: any[] = []
+  context: unknown[] = []
 ): ILoggable<S> => ({
   severity: severity,
   channel: channel,

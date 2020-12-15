@@ -8,7 +8,7 @@ import {
 export const logWithEvent = <S extends LogSeverity>(
   logChannelHandler: LogChannelHandler<S>,
   emitter: IEmitter
-): LogChannelHandler<S> => (message: string, ...context: any[]) => {
+) => (message: string, ...context: unknown[]) => {
   const loggable = logChannelHandler(message, ...context);
   emitter.emit(LogEvents.MESSAGE_LOGGED, loggable);
   return loggable;
