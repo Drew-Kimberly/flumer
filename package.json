@@ -44,7 +44,7 @@
     "gts": "^2.0.2",
     "jest": "^26.0.1",
     "lerna": "^3.22.0",
-    "semantic-release": "^15.14.0",
+    "semantic-release": "^17.2.3",
     "ts-jest": "^26.0.0",
     "typescript": "^3.8.3"
   },
