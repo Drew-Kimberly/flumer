@@ -1,5 +1,5 @@
-import {createLogger} from '../createLogger';
-import {createMockEventEmitter} from '../__mocks__/createMockEventEmitter';
+import { createLogger } from '../createLogger';
+import { createMockEventEmitter } from '../__mocks__/createMockEventEmitter';
 
 describe('Test suite for createLogger', () => {
   test('createLogger returns a function that returns a log channel', () => {

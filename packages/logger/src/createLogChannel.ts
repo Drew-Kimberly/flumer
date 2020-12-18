@@ -1,5 +1,5 @@
-import {LogChannelName, LogChannelFactory, LogSeverity} from '@flumer/core';
-import {createLoggable} from './createLoggable';
+import { LogChannelName, LogChannelFactory, LogSeverity } from '@flumer/core';
+import { createLoggable } from './createLoggable';
 
 export const createLogChannel: LogChannelFactory = (
   channel: LogChannelName

@@ -1,5 +1,5 @@
-import {ILoggable, LogChannelName, LogSeverity} from '@flumer/core';
-import {createLogChannel} from '../createLogChannel';
+import { ILoggable, LogChannelName, LogSeverity } from '@flumer/core';
+import { createLogChannel } from '../createLogChannel';
 
 describe('Test suite for createLogChannel', () => {
   const channelName: LogChannelName = 'foo';

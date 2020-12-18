@@ -1,6 +1,6 @@
-import {consoleWriter} from '../../writers';
-import {ILoggable, LogSeverity} from '@flumer/core';
-import {asIsFormatter} from '../../formatters';
+import { consoleWriter } from '../../writers';
+import { ILoggable, LogSeverity } from '@flumer/core';
+import { asIsFormatter } from '../../formatters';
 
 describe('Test suite for consoleWriter', () => {
   const consoleLogFn = console.log;

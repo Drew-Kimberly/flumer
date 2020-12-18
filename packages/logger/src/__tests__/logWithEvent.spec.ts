@@ -4,8 +4,8 @@ import {
   LogEvents,
   LogSeverity,
 } from '@flumer/core';
-import {logWithEvent} from '../logWithEvent';
-import {createMockEventEmitter} from '../__mocks__/createMockEventEmitter';
+import { logWithEvent } from '../logWithEvent';
+import { createMockEventEmitter } from '../__mocks__/createMockEventEmitter';
 
 describe('Test suite for logWithEvent', () => {
   const message = 'hello world';
@@ -29,14 +29,14 @@ describe('Test suite for logWithEvent', () => {
   });
 
   test('logWithEvent returns the logged loggable instance', () => {
-    const expected: ILoggable = {...loggable, message: message};
+    const expected: ILoggable = { ...loggable, message: message };
     expect(logWithEvent(handler, createMockEventEmitter())(message)).toEqual(
       expected
     );
   });
 
   test('logWithEvent emits a MESSAGE_LOGGED event with the loggable instance context', () => {
-    const expected: ILoggable = {...loggable, message: message};
+    const expected: ILoggable = { ...loggable, message: message };
     const assertion = (e: LogEvents, context: ILoggable) => {
       expect(e).toEqual(LogEvents.MESSAGE_LOGGED);
       expect(context).toEqual(expected);

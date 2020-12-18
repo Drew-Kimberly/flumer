@@ -6,10 +6,10 @@ import {
   LogFormatter,
   LogWriter,
 } from '@flumer/core';
-import {createLogger} from './createLogger';
-import {EventEmitter} from 'events';
-import {standardFormatter} from './formatters';
-import {consoleWriter} from './writers';
+import { createLogger } from './createLogger';
+import { EventEmitter } from 'events';
+import { standardFormatter } from './formatters';
+import { consoleWriter } from './writers';
 
 export const createLoggerFactory = (
   logWriter: LogWriter = consoleWriter,
