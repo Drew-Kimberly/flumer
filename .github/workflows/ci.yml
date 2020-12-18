@@ -1,0 +1,66 @@
+name: 'Build | Test | Publish'
+
+on: [push]
+
+jobs:
+  compile-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+
+    - name: Restore cached dependencies
+      uses: actions/cache@v2
+      with:
+        path: |
+          node_modules
+          packages/**/node_modules
+        key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
+
+    - name: Install Dependencies
+      run: npm ci
+
+    - name: Compile
+      run: npm run compile
+
+    - name: Lint
+      run: npm run check 
+
+    - name: Unit Test
+      run: npm run test:coverage
+
+    - name: Coverage
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Publish
+      if: ${{github.ref == 'refs/heads/master'}}
+      run: echo Hello World
+
+    - name: Notify Success
+      if: github.ref == 'refs/heads/master' && success()
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_MESSAGE: ':tada: ${{ github.ref }} build succeeded :tada:'
+        SLACK_USERNAME: GH Actions Bot
+        SLACK_FOOTER: ''
+        SLACK_COLOR: good
+        MSG_MINIMAL: 'actions url,commit'
+
+    - name: Notify Failure
+      if: github.ref == 'refs/heads/master' && failure()
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_MESSAGE: ':this_is_fine: ${{ github.ref }} build failed :panic:'
+        SLACK_USERNAME: GH Actions Bot
+        SLACK_FOOTER: ''
+        SLACK_COLOR: '#ff0011'
+        MSG_MINIMAL: 'actions url,commit'
