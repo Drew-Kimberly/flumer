@@ -6,8 +6,8 @@ import {
   Logger,
   LogSeverity,
 } from '@flumer/core';
-import {createLogChannel} from './createLogChannel';
-import {logWithEvent} from './logWithEvent';
+import { createLogChannel } from './createLogChannel';
+import { logWithEvent } from './logWithEvent';
 
 export const createLogger = (emitter: IEmitter) => (
   channel: LogChannelName = DEFAULT_LOG_CHANNEL

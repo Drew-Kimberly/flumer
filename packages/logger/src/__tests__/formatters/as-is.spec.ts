@@ -1,5 +1,5 @@
-import {ILoggable, LogSeverity} from '@flumer/core';
-import {asIsFormatter} from '../../formatters';
+import { ILoggable, LogSeverity } from '@flumer/core';
+import { asIsFormatter } from '../../formatters';
 
 describe('Test suite for asIsFormatter', () => {
   const loggable: ILoggable = {

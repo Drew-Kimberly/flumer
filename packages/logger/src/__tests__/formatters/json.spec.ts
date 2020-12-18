@@ -1,5 +1,5 @@
-import {ILoggable, LogSeverity} from '@flumer/core';
-import {jsonFormatter} from '../../formatters';
+import { ILoggable, LogSeverity } from '@flumer/core';
+import { jsonFormatter } from '../../formatters';
 
 describe('Test suite for jsonFormatter', () => {
   const loggable: ILoggable = {

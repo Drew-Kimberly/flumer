@@ -1,4 +1,4 @@
-import {EventEmitHandler, EventListener, IEmitter} from '@flumer/core';
+import { EventEmitHandler, EventListener, IEmitter } from '@flumer/core';
 
 const defaultEmit: EventEmitHandler = (e, loggable) => {};
 const defaultOn: EventListener = (e, handler) => {};

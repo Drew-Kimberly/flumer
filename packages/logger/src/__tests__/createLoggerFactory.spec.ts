@@ -1,4 +1,4 @@
-import {createLoggerFactory} from '../createLoggerFactory';
+import { createLoggerFactory } from '../createLoggerFactory';
 import {
   DEFAULT_LOG_CHANNEL,
   EventListener,
@@ -9,7 +9,7 @@ import {
   LogSeverity,
   LogWriter,
 } from '@flumer/core';
-import {createMockEventEmitter} from '../__mocks__/createMockEventEmitter';
+import { createMockEventEmitter } from '../__mocks__/createMockEventEmitter';
 
 describe('Test suite for createLoggerFactory', () => {
   const mockLogWriter: LogWriter = jest.fn(async (loggable, formatter) => {});

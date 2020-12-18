@@ -1,4 +1,4 @@
-import {ILoggable, LogChannelName, LogSeverity} from '@flumer/core';
+import { ILoggable, LogChannelName, LogSeverity } from '@flumer/core';
 
 export const createLoggable = <S extends LogSeverity>(
   severity: S,
