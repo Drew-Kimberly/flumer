@@ -18,6 +18,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Install Dependencies
+      run: sudo apt-get install jq
+
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
       with:
@@ -26,3 +29,35 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
+
+    - name: Fetch Number of Open Alerts
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      run: |
+        export NUM_CODEQL_ALERTS="$(curl \
+          --url https://api.github.com/repos/${{ github.repository }}/code-scanning/alerts?state=open \
+          -H 'Accept: application/vnd.github.v3+json' \
+          -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | jq length)"
+        echo "::set-env name=NUM_CODEQL_ALERTS::$NUM_CODEQL_ALERTS"
+
+    - name: Notify Success
+      if: success()
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_MESSAGE: 'CodeQL Scan found ${{ env.NUM_CODEQL_ALERTS }} open security alerts'
+        SLACK_USERNAME: GH Actions Bot
+        SLACK_FOOTER: ''
+        SLACK_COLOR: good
+        MSG_MINIMAL: 'actions url,commit'
+
+    - name: Notify Failure
+      if: failure()
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_MESSAGE: 'A failure occurred running the CodeQL scan :this_is_fine:'
+        SLACK_USERNAME: GH Actions Bot
+        SLACK_FOOTER: ''
+        SLACK_COLOR: '#ff0011'
+        MSG_MINIMAL: 'actions url,commit'
