@@ -20,19 +20,19 @@ jobs:
         path: |
           node_modules
           packages/**/node_modules
-        key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
+        key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
 
     - name: Install Dependencies
-      run: npm ci
+      run: yarn
 
     - name: Compile
-      run: npm run compile
+      run: yarn compile
 
     - name: Lint
-      run: npm run check 
+      run: yarn run check 
 
     - name: Unit Test
-      run: npm run test:coverage
+      run: yarn test:coverage
 
     - name: Coverage
       uses: coverallsapp/github-action@master

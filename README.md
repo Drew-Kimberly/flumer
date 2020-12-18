@@ -18,10 +18,34 @@
 
 ## Development
 
+### Getting Started
+Clone this repository and from the root run:
+```
+yarn
+```
+
+### Running Tests
+From the repository root, run:
+```
+yarn test
+```
+
+### Running Static Analysis (ESLint)
+From the repository root, run:
+```
+yarn run check
+```
+
+### Compiling Packages
+From the repository root, run:
+```
+yarn compile
+```
+
 ### Conventional Commits
 To commit changes, run:
 ```shell script
-npm run commit
+yarn commit
 ```
 
 This will run the [Commitizen](https://github.com/commitizen/cz-cli) wizard to enforce conventional commit standards.
@@ -31,5 +55,5 @@ This will run the [Commitizen](https://github.com/commitizen/cz-cli) wizard to e
 Flumer packages are published to NPM using [Semantic Release](https://github.com/semantic-release/semantic-release). Specifically,
 we use the [Lerna Semantic Release Changelog](https://github.com/atlassian/lerna-semantic-release) to facilitate the monorepo codebase format.
 
-The publishing happens in our CI/CD process using TravisCI from within the `release` build stage that only runs when
+The publishing happens in our CI/CD process using Github Actions from within the `release` build stage that only runs when
 changes are merged into the `master` branch.
