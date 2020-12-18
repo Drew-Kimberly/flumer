@@ -39,7 +39,7 @@ describe('Test suite for logWithEvent', () => {
     const expected: ILoggable = {...loggable, message: message};
     const assertion = (e: LogEvents, context: ILoggable) => {
       expect(e).toEqual(LogEvents.MESSAGE_LOGGED);
-      expect(context).toEqual(expected);
+      expect(context).toEqual(false);
     };
 
     logWithEvent(
