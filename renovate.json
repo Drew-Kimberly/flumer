@@ -1,0 +1,36 @@
+{
+  "extends": [
+    "config:base",
+    ":pinOnlyDevDependencies",
+    ":semanticCommitScope({{parentDir}})"
+  ],
+  "commitMessagePrefix": null,
+  "postUpgradeTasks": {
+    "commands": [
+      "yarn deduplicate"
+    ]
+  },
+  "reviewersFromCodeOwners": true,
+  "packageRules": [
+    {
+      "paths": [
+        "+(package.json)"
+      ],
+      "extends": [
+        ":semanticCommitScopeDisabled"
+      ]
+    },
+    {
+      "paths": [
+        "packages/core"
+      ],
+      "branchPrefix": "renovate/core/"
+    },
+    {
+      "paths": [
+        "packages/logger"
+      ],
+      "branchPrefix": "renovate/logger/"
+    }
+  ]
+}
