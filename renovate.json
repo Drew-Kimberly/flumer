@@ -40,6 +40,12 @@
         "sandbox/node"
       ],
       "branchPrefix": "renovate/sandbox-node/"
+    },
+    {
+      "paths": [
+        "sandbox/web"
+      ],
+      "branchPrefix": "renovate/sandbox-web/"
     }
   ]
 }

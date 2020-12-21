@@ -40,6 +40,13 @@ To run the sandbox from the repository root:
 yarn sandbox:node
 ```
 
+#### Web Sandbox
+The [Web Sandbox](sandbox/web/README.md) provides an environment for testing Flumer in a Web environment.
+To run the sandbox from the repository root:
+```
+yarn sandbox:web
+```
+
 ### Running Static Analysis (ESLint)
 From the repository root, run:
 ```

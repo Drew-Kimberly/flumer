@@ -10,6 +10,7 @@
     "packages/**/__fixtures__",
     "packages/**/build",
     "packages/**/node_modules",
-    "sandbox/**/node_modules"
+    "sandbox/**/node_modules",
+    "sandbox/web/dist"
   ]
 }
