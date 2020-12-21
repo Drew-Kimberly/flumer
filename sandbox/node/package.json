@@ -1,0 +1,31 @@
+{
+    "name": "@flumer-sandbox/node",
+    "private": true,
+    "version": "0.0.0",
+    "description": "Node sandbox for Flumer package integration testing",
+    "author": "Drew Kimberly",
+    "license": "MIT",
+    "main": "index.ts",
+    "engines": {
+      "node": ">=12"
+    },
+    "scripts": {
+      "clean": "rm -rf build",
+      "start": "ts-node index.ts"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Drew-Kimberly/flumer.git"
+    },
+    "readme": "https://github.com/Drew-Kimberly/flumer/tree/master/sandbox/node/README.md",
+    "bugs": {
+      "url": "https://github.com/Drew-Kimberly/flumer/issues"
+    },
+    "homepage": "https://github.com/Drew-Kimberly/flumer/tree/master/sandbox/node",
+    "dependencies": {
+        "@flumer/core": "0.0.0",
+        "@flumer/logger": "0.0.0",
+        "ts-node": "*"
+      }
+  }
+  

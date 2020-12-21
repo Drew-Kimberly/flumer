@@ -30,6 +30,16 @@ From the repository root, run:
 yarn test
 ```
 
+### Development Sandboxes
+Sandbox environments are provided by this repo for code examples and testing during development.
+
+#### Node Sandbox
+The [NodeJS Sandbox](sandbox/node/README.md) provides an environment for testing Flumer in a Node environment.
+To run the sandbox from the repository root:
+```
+yarn sandbox:node
+```
+
 ### Running Static Analysis (ESLint)
 From the repository root, run:
 ```

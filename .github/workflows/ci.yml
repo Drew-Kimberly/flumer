@@ -20,6 +20,7 @@ jobs:
         path: |
           node_modules
           packages/**/node_modules
+          sandbox/**/node_modules
         key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
 
     - name: Install Dependencies

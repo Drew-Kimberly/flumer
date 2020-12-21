@@ -30,6 +30,7 @@
     "fix": "gts fix",
     "renovate:update-config": "ts-node scripts/renovate/updateRenovateConfig.ts",
     "renovate:lint-config": "ts-node scripts/renovate/lintRenovateConfig.ts",
+    "sandbox:node": "lerna run start --scope=@flumer-sandbox/node --stream",
     "test": "jest",
     "test:coverage": "jest --coverage"
   },
@@ -58,6 +59,7 @@
     }
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "sandbox/*"
   ]
 }
