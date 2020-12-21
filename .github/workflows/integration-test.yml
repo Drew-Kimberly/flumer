@@ -1,0 +1,41 @@
+name: 'Integration Tests'
+
+on: [push]
+
+jobs:
+  node:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v2
+      with:
+        node-version: 12.x
+
+    - name: Restore cached dependencies
+      uses: actions/cache@v2
+      with:
+        path: |
+          node_modules
+          packages/**/node_modules
+          sandbox/**/node_modules
+        key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
+
+    - name: Install Dependencies
+      run: yarn
+
+    - name: Test
+      run: yarn sandbox:node # Temporary until integration tests are implemented.
+
+    - name: Notify Failure
+      if: github.ref == 'refs/heads/master' && failure()
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_MESSAGE: ':elmofire: NodeJS Integration Tests failed'
+        SLACK_USERNAME: GH Actions Bot
+        SLACK_FOOTER: ''
+        SLACK_COLOR: '#ff0011'
+        MSG_MINIMAL: 'actions url,commit'

@@ -32,6 +32,16 @@ const getGlobMatches = (pattern: string): Promise<string[]> =>
 const flatten = <T>(arr: T[][]): T[] =>
   arr.reduce((curr, next) => curr.concat(next), []);
 
+const getBranchPrefix = (packagePath: string) => {
+  const packageName = path.basename(packagePath);
+  const prefix = 'renovate/';
+  if (packagePath.includes('sandbox')) {
+    return `${prefix}sandbox-${packageName}/`;
+  }
+
+  return `${prefix}${packageName}/`;
+};
+
 /**
  * Returns the Renovate config with packageRules derived from the Lerna Monorepo config.
  */
@@ -58,7 +68,7 @@ export const lernaToRenovateConfig = async (): Promise<IRenovateConfig> => {
 
   const lernaPackageRules: IRenovatePackageRule[] = lernaPackages.map(pkg => ({
     paths: [path.relative(process.cwd(), pkg)],
-    branchPrefix: `renovate/${path.basename(pkg)}/`,
+    branchPrefix: getBranchPrefix(pkg),
   }));
 
   const newRenovateConfig: IRenovateConfig = {

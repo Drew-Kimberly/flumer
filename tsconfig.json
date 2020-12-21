@@ -1,16 +1,7 @@
 {
-  "extends": "./node_modules/gts/tsconfig-google.json",
+  "extends": "./config/tsconfig.base.json",
   "compilerOptions": {
     "rootDir": ".",
-    "outDir": "build",
-    "esModuleInterop": true,
-    "noImplicitAny": false
-  },
-  "exclude": [
-    "packages/**/__tests__",
-    "packages/**/__mocks__",
-    "packages/**/__fixtures__",
-    "packages/**/build",
-    "packages/**/node_modules"
-  ]
+    "outDir": "build"
+  }
 }

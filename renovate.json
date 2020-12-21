@@ -10,7 +10,9 @@
       "yarn deduplicate"
     ]
   },
-  "reviewers": ["Drew-Kimberly"],
+  "reviewers": [
+    "Drew-Kimberly"
+  ],
   "packageRules": [
     {
       "paths": [
@@ -32,6 +34,12 @@
         "packages/logger"
       ],
       "branchPrefix": "renovate/logger/"
+    },
+    {
+      "paths": [
+        "sandbox/node"
+      ],
+      "branchPrefix": "renovate/sandbox-node/"
     }
   ]
 }

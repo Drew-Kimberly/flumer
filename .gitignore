@@ -4,3 +4,5 @@ coverage
 
 packages/**/build
 packages/**/node_modules
+
+sandbox/**/node_modules

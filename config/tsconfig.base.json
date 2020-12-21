@@ -9,6 +9,7 @@
     "packages/**/__mocks__",
     "packages/**/__fixtures__",
     "packages/**/build",
-    "packages/**/node_modules"
+    "packages/**/node_modules",
+    "sandbox/**/node_modules"
   ]
 }
