@@ -44,7 +44,7 @@ export const lernaToRenovateConfig = async (): Promise<IRenovateConfig> => {
   const existingRenovateConfig: IRenovateConfig =
     require(renovateConfigPath) || {};
   const defaultPackageRule: IRenovatePackageRule = {
-    paths: ['+(package.json)'],
+    paths: ['+(package.json)', '.github'],
     extends: [':semanticCommitScopeDisabled'],
   };
 
