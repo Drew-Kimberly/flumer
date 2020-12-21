@@ -1,8 +1,10 @@
 node_modules
 coverage
 .idea
+**/.cache
 
 packages/**/build
 packages/**/node_modules
 
 sandbox/**/node_modules
+sandbox/web/dist

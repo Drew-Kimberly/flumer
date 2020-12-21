@@ -1,8 +1,8 @@
 {
-    "name": "@flumer-sandbox/node",
+    "name": "@flumer-sandbox/web",
     "private": true,
     "version": "0.0.0",
-    "description": "Node sandbox for Flumer package integration testing",
+    "description": "Web sandbox for Flumer package integration testing",
     "author": "Drew Kimberly",
     "license": "MIT",
     "main": "index.ts",
@@ -10,21 +10,21 @@
       "node": ">=12"
     },
     "scripts": {
-      "start": "ts-node index.ts"
+      "start": "parcel index.html --open"
     },
     "repository": {
       "type": "git",
       "url": "git+https://github.com/Drew-Kimberly/flumer.git"
     },
-    "readme": "https://github.com/Drew-Kimberly/flumer/tree/master/sandbox/node/README.md",
+    "readme": "https://github.com/Drew-Kimberly/flumer/tree/master/sandbox/web/README.md",
     "bugs": {
       "url": "https://github.com/Drew-Kimberly/flumer/issues"
     },
-    "homepage": "https://github.com/Drew-Kimberly/flumer/tree/master/sandbox/node",
+    "homepage": "https://github.com/Drew-Kimberly/flumer/tree/master/sandbox/web",
     "dependencies": {
         "@flumer/core": "0.0.0",
         "@flumer/logger": "0.0.0",
-        "ts-node": "*"
+        "parcel-bundler": "~1.12.4"
       }
   }
   

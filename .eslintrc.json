@@ -1,6 +1,6 @@
 {
   "extends": "./node_modules/gts/",
-  "ignorePatterns": ["packages/**/build/"],
+  "ignorePatterns": ["packages/**/build/", "sandbox/web/dist"],
   "overrides": [
     {
       "files": ["packages/**/*.spec.ts"],
