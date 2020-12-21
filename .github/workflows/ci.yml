@@ -29,7 +29,9 @@ jobs:
       run: yarn compile
 
     - name: Lint
-      run: yarn run check 
+      run: |
+        yarn run check 
+        yarn renovate:lint-config
 
     - name: Unit Test
       run: yarn test:coverage
