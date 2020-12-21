@@ -10,11 +10,12 @@
       "yarn deduplicate"
     ]
   },
-  "reviewersFromCodeOwners": true,
+  "reviewers": ["Drew-Kimberly"],
   "packageRules": [
     {
       "paths": [
-        "+(package.json)"
+        "+(package.json)",
+        ".github"
       ],
       "extends": [
         ":semanticCommitScopeDisabled"
