@@ -5,6 +5,7 @@
     ":semanticCommitScope({{parentDir}})"
   ],
   "commitMessagePrefix": null,
+  "allowedPostUpgradeCommands": ["^yarn deduplicate$"],
   "postUpgradeTasks": {
     "commands": [
       "yarn deduplicate"
